@@ -53,4 +53,5 @@
 > **改进**   
       *  .data 保存已初始化的全局变量和静态变量。  
     *  .bss 保存未初始化的全局变量和静态变量。
-    表述上似有些问题，.bss全名为 Basic service segment/section
+>    表述上似有些问题，.bss全名为 Basic service segment/section，
+     其实在C环境建立时其中的变量也都会初始化为0，也就是我们常说的全局变量默认为0，原文中宜添加**显式**二字在初始化前。
