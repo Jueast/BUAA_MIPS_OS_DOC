@@ -55,3 +55,42 @@
     *  .bss 保存未初始化的全局变量和静态变量。
 >    表述上似有些问题，.bss全名为 Basic service segment/section，
      其实在C环境建立时其中的变量也都会初始化为0，也就是我们常说的全局变量默认为0，原文中宜添加**显式**二字在初始化前。
+
+### 关于printf
+  其实这个函数并没有太多可以说的，就是通过传入一个函数指针让`printf`通过这个函数可以进行打印，所要填写的也只是简单的解析格式化字符串。
+
+### 关于Git
+  Lab 1 的后半部分主要关注点在Git的使用上，其实作为一个版本控制系统，git本身是非常易用的，第一次接触git的时候，其实按照pull，push等英文原意去理解，也非常的直观，关于git，我觉得比较好的材料是github官网上的指导。他们甚至把常用命令做成了一张卡片来方便随查随用。
+
+
+  --------
+  > #### Thinking 2.1
+    14061102@ubuntu:~/gittest$ rm print.c
+    14061102@ubuntu:~/gittest$ ls
+    14061102@ubuntu:~/gittest$ git rm print.c
+    rm 'print.c'
+    14061102@ubuntu:~/gittest$ ls
+    14061102@ubuntu:~/gittest$ git status
+    # On branch master
+    # Changes to be committed:
+    #   (use "git reset HEAD <file>..." to unstage)
+    #
+    #       deleted:    print.c
+    #
+  > 这种情况下恢复很简单  
+
+  >     14061102@ubuntu:~/gittest$ git reset --hard HEAD
+
+  > 即可回滚到上一次commit处  
+  > 如果需要保留这次的其他修改可以先  
+        `git reset HEAD print.c` 取消对`print.c`的跟踪，然后进行一次commit后再进行相关操作即可。
+
+  ----------
+  #### Thinking 2.2
+  方法同样简单，   `git reset HEAD Tucao.txt`，即可取消track。  
+  更好的办法是再添加该文件名进.gitignore，一了百了。 
+
+
+
+
+  ----
